@@ -12,17 +12,9 @@ const PORT = process.env.PORT || 8080;
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-const burgerList = [
-{
-    burger: 'Pizza Burger'
-}
-]
+const routes = require('./controller/burgers_controller')
 
-app.get('',(req,res)=> {
-    res.render('index',{
-        allBurgers: burgerList,
-    });
-});
+app.use(routes);
 
 app.listen(PORT, () =>
   console.log(`Server listening on: http://localhost:${PORT}`)
