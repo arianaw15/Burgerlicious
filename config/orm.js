@@ -1,13 +1,19 @@
 const connection = require('./connection');
 
 const orm = {
-selectAll(burgers){
-    const queryString = 'SELECT * FROM ??';
-    connection.query(queryString,[burgers], (err, result) => {
+selectAll(burgerName,burgers){
+    const queryString = 'SELECT ?? FROM ??';
+    connection.query(queryString,[burgerName,burgers], (err, result) => {
         if (err) throw err;
         console.table(result);
-      }
-      );
+      });
+},
+updateOne(burgerName,burgers,devoured,boolean){
+    const queryString = 'SELECT ?? FROM ?? WHERE ??=??';
+    connection.query(queryString,[burgerName,burgers,devoured,boolean], (err,result)=>{
+        if (err) throw err;
+        console.table(result);
+    });
 },
 };
 
@@ -19,5 +25,7 @@ selectAll(burgers){
 //       },
 //       );
 // }
+
+
 
 module.exports = orm;

@@ -14,4 +14,14 @@ router.get('/',(req,res)=> {
     });
 });
 
+router.get('/', (req,res)=>{
+    burger.updateOne(data =>{
+        const updateObject = {
+            burgers: data
+        };
+        console.log(updateObject);
+        res.render('all-burgers', updateObject)
+    });
+});
+
 module.exports = router;
