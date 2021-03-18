@@ -1,10 +1,12 @@
 const connection = require('./connection');
 
 const orm = {
-selectAll(burgerName, burgers,cb){
+selectAll(burgerName, burgers, cb){
     const queryString = `SELECT ?? FROM ??`;
     connection.query(queryString,[burgerName, burgers],(err, result) => {
-        if (err) throw err;
+        if (err) {
+            throw err;
+        }
         cb(result);
       });
 },

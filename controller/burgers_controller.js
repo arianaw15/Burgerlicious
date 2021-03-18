@@ -2,12 +2,15 @@ const express = require('express');
 
 const router = express.Router();
 
-const burger = require('../models/burger');
+const burger = require('../models/burger.js');
 
 router.get('/',(req,res)=> {
     burger.selectAll(data=>{
-        console.log({burgers: data})
-        res.render('all-burgers',{burgers: data})
+        const object = {
+            burgers:data,
+        }
+        console.log(object)
+        res.render('all-burgers',object)
     });
 });
 
