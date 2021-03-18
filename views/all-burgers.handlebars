@@ -9,16 +9,16 @@
 </style>
 
 <h1>BURGERLICIOUS</h1>
-<h2>All Burgers</h2>
+<h2>All Burgers (click to eat one)</h2>
 <ul>
-{{#each object}}
-  <li><button class= "eachBurger">{{burgers}}</button></li>
+{{#each burgers}}
+  <li>{{data}}</li>
 {{/each}}
 </ul>
 
-<h2>Burgers Eaten</h2>
+{{!-- <h2>Burgers Eaten</h2>
 <ul>
     {{#each updateObject}}
 <li><button>{{burgers}}</button></li>
     {{/each}}
-</ul>
+</ul> --}}

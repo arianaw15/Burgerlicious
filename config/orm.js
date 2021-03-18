@@ -1,21 +1,21 @@
 const connection = require('./connection');
 
 const orm = {
-selectAll(burgerName,burgers){
-    const queryString = 'SELECT ?? FROM ??';
-    connection.query(queryString,[burgerName,burgers], (err, result) => {
+selectAll(burgerName, burgers,cb){
+    const queryString = `SELECT ?? FROM ??`;
+    connection.query(queryString,[burgerName, burgers],(err, result) => {
         if (err) throw err;
-        console.table(result);
+        cb(result);
       });
 },
-updateOne(burgerName,burgers,devoured,boolean){
-    const queryString = 'SELECT ?? FROM ?? WHERE ??=??';
-    connection.query(queryString,[burgerName,burgers,devoured,boolean], (err,result)=>{
-        if (err) throw err;
-        console.table(result);
-    });
-},
-};
+// updateOne(burgerName,burgers,devoured,boolean){
+//     const queryString = 'SELECT ?? FROM ?? WHERE ??=??';
+//     connection.query(queryString,[burgerName,burgers,devoured,boolean], (err,result)=>{
+//         if (err) throw err;
+//         console.table(result);
+//     });
+// },
+// };
 
 // insertOne(){
 //     const queryString = 'INSERT INTO ?? (??) VALUES (??)';
@@ -24,7 +24,7 @@ updateOne(burgerName,burgers,devoured,boolean){
 //         console.table(result);
 //       },
 //       );
-// }
+}
 
 
 
