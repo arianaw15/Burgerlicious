@@ -15,21 +15,21 @@ router.get('/',(req,res)=> {
 });
 
 router.post('/api/burger', (req,res) => {
-    console.log(req.body.burger);
-    burger.insertOne('burger_name',req.body.burger, (result)=>{
+    // console.log(req.body.burger);
+    burger.insertOne(req.body.burger, (result)=>{
         res.json({id:result.insertId});
     });
 })
 
 
-// router.get('/', (req,res)=>{
-//     burger.updateOne(data =>{
-//         const updateObject = {
-//             burgers: data
-//         };
-//         console.log(updateObject);
-//         res.render('all-burgers', updateObject)
-//     });
-// });
+router.get('/', (req,res)=>{
+    burger.updateOne(data =>{
+        const updateObject = {
+            burgers: data
+        };
+        console.log(updateObject);
+        res.render('all-burgers', updateObject)
+    });
+});
 
 module.exports = router;
