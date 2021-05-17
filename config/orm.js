@@ -1,13 +1,14 @@
-const connection = require('./connection');
+const connection = require('./connection.js');
 
 const orm = {
-selectAll(burgerName, burgers, cb){
+selectAll(burgerName, burgers){
     const queryString = `SELECT ?? FROM ??`;
+    
     connection.query(queryString,[burgerName, burgers],(err, result) => {
         if (err) {
             throw err;
         }
-        cb(result);
+        // cb(result);
       });
 },
 // updateOne(burgerName,burgers,devoured,boolean){
@@ -17,16 +18,21 @@ selectAll(burgerName, burgers, cb){
 //         console.table(result);
 //     });
 // },
-// };
+// 
 
-// insertOne(){
-//     const queryString = 'INSERT INTO ?? (??) VALUES (??)';
-//     connection.query(queryString,[burgers,burger_name,value],(err, result) => {
-//         if (err) throw err;
-//         console.table(result);
-//       },
-//       );
+insertOne(value,cb){
+    console.log(value);
+    let queryString = `INSERT INTO burger (burger_name) VALUES (??)`;
+    console.log(queryString);
+    connection.query(queryString,value,(err, result) => {
+        if (err) {
+        throw err;
+        }
+        cb(result);
+      });
 }
+}
+;
 
 
 

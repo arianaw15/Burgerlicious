@@ -1,20 +1,25 @@
-<style media="screen">
-  li {
-    background-color: #E69A8E;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 50%;
-    font-family: sans-serif;
-  }
-</style>
-
 <h1>BURGERLICIOUS</h1>
-<h2>All Burgers (click to eat one)</h2>
+{{!-- This allows the user to add new burgers to the All Burgers list to be eaten --}}
+<h2>Add Burgers to Eat</h2>
+<form id="create-form">
+  <div class="form-group">
+    <label for="burg">Burger Name:</label>
+    <input type="text" id="burg" name="name">
+  </div>
+  <button type="submit">Add Burger</button>
+</form>
+
+{{!-- This allows the user to "devour" a burger --}}
+<h2>Time to eat!</h2>
 <ul>
 {{#each burgers}}
-  <li><button>{{this.burger_name}}</button></li>
+  <li>{{this.burger_name}} <button> Devour</button></li>
 {{/each}}
 </ul>
+
+
+
+
 
 {{!-- <h2>Burgers Eaten</h2>
 <ul>
