@@ -6,12 +6,10 @@ dotenv.config();
 // Create an instance of the express app.
 const app = express();
 
-app.use(express.static('public'));
-
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'));
 
 
 
@@ -22,8 +20,8 @@ const PORT = process.env.PORT || 8080;
 const db = require("./models");
 
 // Set Handlebars as the default templating engine.
-app.engine('handlebars', exphbs({ defaultLayout: 'main', extname:'.handlebars' }));
-app.set('view engine', 'handlebars');
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname:'.hbs' }));
+app.set('view engine', 'hbs');
 
 const routes = require('./controller/burgers_controller');
 app.use(routes);
