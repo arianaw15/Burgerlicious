@@ -18,7 +18,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 8080;
 
 // Set Handlebars as the default templating engine.
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main', extname:'.handlebars' }));
 app.set('view engine', 'handlebars');
 
 const routes = require('./controller/burgers_controller');
