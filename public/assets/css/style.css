@@ -1,27 +1,63 @@
-body {
-background-color:#E4D095 ;
-text-align: center;
+body{
+background-color:#f4f1de;
 }
 
-ul{
-  align-items: center;
+h2{
+  font-family: 'Bebas Neue', cursive;
 }
 
-li {
-    background-color: #F8931F;
-    color: #2E2A39;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 25%;
-    font-family: sans-serif;
-    float: center;
-  }
+header{
+  background-color:#fe8e48 ;
+  color: #272838;
+  height: 15vh;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+}
+h1{
+  font-size:100px;
+}
 
 button{
-  background-color: #2E2A39;
-  color:#E4D095;
+  background-color: #cacaca;
+  color:#f4f1de;
+  border-color: #fe8e48;
   margin: 10px;
   padding: 5px;
   border-radius: 5px;
+  font-family: 'Bebas Neue', cursive;
+  width: 200px;
 }
+
+button:hover{
+  background-color: #fe8e48;
+  width: 200px;
+  border-color: #fe8e48;
+}
+
+.col-sm-4{
+  color: #2E2A39;
+  align-items: center;
+}
+
+#body{
+  text-align: center;
+}
+
+.btn{
+  font-family: 'Bebas Neue', cursive;
+  background-color: #fe8e48;
+  width: 100px;
+  border-color: #fe8e48;
+}
+
+.btn:hover{
+  background-color: #cacaca;
+  color: #272838;
+  border-color: #fe8e48;
+}
+
+/* #53929b
+#fd9301
+#e3d096
+#2e2a39 */
 

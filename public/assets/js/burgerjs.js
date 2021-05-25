@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const deleteBurgerBtn = document.querySelectorAll('.devour');
 
-    deleteBurgerBtn.forEach((li) => {
-        li.addEventListener('click', (event) => {
+    deleteBurgerBtn.forEach((a) => {
+        a.addEventListener('click', (event) => {
             console.log(event.target)
            const id = event.target.getAttribute('value');
            console.log(id);
