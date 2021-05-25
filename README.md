@@ -28,7 +28,7 @@ For future contributions push all changes to a separate branch and request the r
 To test this project use the command "node server.js" if any errors occur, you will be able to view it in the console log. Please inform the repository owner of any errors.
 
 ## Images
-[Full Video Here]![](./Assets/burgerlicious.PNG)
+![](./public/assets/burgerlicious.PNG)
 
 ## Links
 - Repository Link: https://github.com/arianaw15/Burgerlicious
