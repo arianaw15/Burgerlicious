@@ -11,19 +11,11 @@
 
 {{!-- This allows the user to "devour" a burger --}}
 <h2>Time to eat!</h2>
-<ul>
+<ul >
 {{#each burgers}}
-  <li>{{this.burger_name}} <button> Devour</button></li>
+  <li>
+    <a class="devour" value={{this.id}}>Devour {{this.burger_name}}</a>
+  </li>
+  
 {{/each}}
 </ul>
-
-
-
-
-
-{{!-- <h2>Burgers Eaten</h2>
-<ul>
-    {{#each updateObject}}
-<li><button>{{burgers}}</button></li>
-    {{/each}}
-</ul> --}}

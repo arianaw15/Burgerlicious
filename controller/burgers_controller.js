@@ -17,19 +17,32 @@ router.get('/',(req,res)=> {
 router.post('/api/burger', (req,res) => {
     // console.log(req.body.burger);
     burger.insertOne(req.body.burger, (result)=>{
-        res.json({id:result.insertId});
-    });
-})
-
-
-router.get('/', (req,res)=>{
-    burger.updateOne(data =>{
-        const updateObject = {
-            burgers: data
-        };
-        console.log(updateObject);
-        res.render('all-burgers', updateObject)
+        res.json({ id: result.insertId });
     });
 });
+
+router.delete('/api/burger/:id', (req, res) => {
+    const id = `${req.params.id}`;
+    
+  
+    burger.deleteOne(id, (result) => {
+      if (result.affectedRows === 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      }
+      res.status(200).end();
+    });
+  });
+
+
+// router.get('/', (req,res)=>{
+//     burger.updateOne(data =>{
+//         const updateObject = {
+//             burgers: data
+//         };
+//         console.log(updateObject);
+//         res.render('all-burgers', updateObject)
+//     });
+// });
 
 module.exports = router;
