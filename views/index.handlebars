@@ -1,1 +1,40 @@
-<h1>{{object}}</h1>
+{{!-- <h1>{{object}}</h1> --}}
+<header><h1>BURGERLICIOUS</h1></header>
+{{!-- This allows the user to add new burgers to the All Burgers list to be eaten --}}
+
+<div id="body">
+<h2>Add Burgers to Eat</h2>
+<form id="create-form">
+  <div class="form-group">
+    <label for="burg">Burger Name:</label>
+    <input type="text" id="burg" name="name">
+  </div>
+  <button type="submit">Add Burger</button>
+</form>
+
+{{!-- This allows the user to "devour" a burger --}}
+<h2>Time to eat!</h2>
+{{!-- <ul >
+{{#each burgers}}
+  <li>{{this.burger_name}}
+    <button class="devour" value={{this.id}}>Devour </button>
+  </li>
+  
+{{/each}}
+</ul> --}}
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    {{#each burgers}}
+    <div class="card devour">
+      <div class="card-body">
+        <h5 class="card-title">{{this.burger_name}}</h5>
+        <a href="#" class="btn btn-primary" class="devour" value={{this.id}}>Devour</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+<div class="col-sm-4"></div>
+</div>

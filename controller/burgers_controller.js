@@ -10,7 +10,7 @@ router.get('/',(req,res)=> {
             burgers:data,
         }
         console.log(object)
-        res.render('all-burgers',object)
+        res.render('index',object)
     });
 });
 
@@ -33,16 +33,5 @@ router.delete('/api/burger/:id', (req, res) => {
       res.status(200).end();
     });
   });
-
-
-// router.get('/', (req,res)=>{
-//     burger.updateOne(data =>{
-//         const updateObject = {
-//             burgers: data
-//         };
-//         console.log(updateObject);
-//         res.render('all-burgers', updateObject)
-//     });
-// });
 
 module.exports = router;
