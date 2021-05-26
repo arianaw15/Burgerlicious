@@ -1,11 +1,10 @@
 var mysql = require('mysql');
-var connection = mysql.createConnection(process.env.JAWSDB_URL);
-var Sequelize = require('sequelize');
+var connection;
 
 // let sequelize;
 
 if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
   host: 'localhost',
@@ -14,6 +13,7 @@ if (process.env.JAWSDB_URL) {
   password: process.env.PASSWORD,
   database: 'burgers_db',
 });
+};
 
 // Connect to the database
 connection.connect((err) => {
