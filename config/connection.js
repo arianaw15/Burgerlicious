@@ -1,7 +1,8 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection(process.env.JAWSDB_URL);
+var Sequelize = require('sequelize');
 
-let sequelize;
+// let sequelize;
 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
