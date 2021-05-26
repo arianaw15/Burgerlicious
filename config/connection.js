@@ -8,9 +8,9 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
-    process.env.UN,
-    process.env.PASSWORD,
-    process.env.DB,
+    process.env.Username,
+    process.env.Password,
+    process.env.Database,
     {
       host: 'bmlx3df4ma7r1yh4.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
       dialect: 'mysql',
