@@ -1,5 +1,5 @@
-const mysql = require('mysql');
-const dotenv = require('dotenv').config();
+var mysql = require('mysql');
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 let sequelize;
 
@@ -7,6 +7,7 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
+    process.env.DB,
     process.env.PASSWORD,
     {
       host: 'localhost',
